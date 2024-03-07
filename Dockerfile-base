@@ -19,8 +19,7 @@ WORKDIR /home/BRUKER
 RUN mkdir hacking \
     && cd hacking \
     && curl -SL
-https://raw.githubusercontent.com/uia-worker/is105misc/master/sem01v2
-4/pawned.sh > pawned.sh \
+https://raw.githubusercontent.com/uia-worker/is105misc/master/sem01v24/pawned.sh > pawned.sh \
     && chmod 764 pawned.sh \
     && cd ..
 
@@ -34,7 +33,7 @@ RUN git config --global user.email "EPOSTADRESSE-GITHUB-REGISTRERING"
 USER root
 RUN curl -SL https://go.dev/dl/go1.21.7.OS-ARCH.tar.gz \
     | tar xvz -C /usr/local
-    
+
 USER BRUKER
 SHELL ["/bin/bash", "-c"]
 RUN mkdir -p $HOME/go/{src,bin}
